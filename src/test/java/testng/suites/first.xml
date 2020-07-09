@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="first" parallel="classes">
+    <listeners></listeners>
+    <test name="Blablabla" >
+        <groups>
+            <run>
+                <include name="first"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="test.java.*" />
+        </packages>
+    </test>
+</suite>
