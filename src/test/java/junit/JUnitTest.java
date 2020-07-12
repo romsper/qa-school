@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Epic("JUnit")
-@Feature("Authorization")
-@Story("Success authorization")
+@Epic("JUnit - Simple")
+@Feature("Calculation")
+@Story("Simple functions")
 public class JUnitTest {
     Logic mainPage = new Logic();
 

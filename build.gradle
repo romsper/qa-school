@@ -19,15 +19,13 @@ allure {
     }
 }
 
-test {
-    String incTags = project.hasProperty("includeTags") ?
-            project.property("includeTags") : 'regression'
-    String excTags = project.hasProperty("excludeTags") ?
-            project.property("excludeTags") : 'regression';
+//$ gradle clean test -D org.gradle.project.includeTags="deals"
 
+test {
     useJUnitPlatform{
-        includeTags incTags
-        excludeTags excTags
+        if (project.hasProperty('includeTags') && project.property('includeTags')) {
+            includeTags project.property('includeTags')
+        }
     }
 }
 
@@ -38,6 +36,7 @@ repositories {
 
 dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     implementation group: 'org.testng', name: 'testng', version: '7.1.0'
     implementation group: 'org.assertj', name: 'assertj-core', version: '3.16.1'
     implementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.6.2'
