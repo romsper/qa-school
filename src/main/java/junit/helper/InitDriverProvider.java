@@ -16,7 +16,7 @@ public class InitDriverProvider implements WebDriverProvider {
 
     private String getHubUrl() {
         String HUB_URL;
-        if (System.getProperty("HUB_URL") == null) {
+        if (System.getProperty("HUB_URL") == null || System.getProperty("HUB_URL").isEmpty()) {
             HUB_URL = "localhost";
         } else {
             HUB_URL = System.getProperty("HUB_URL");
